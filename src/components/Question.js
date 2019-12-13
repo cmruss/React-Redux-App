@@ -13,12 +13,14 @@ const Question = props => {
         <div className='question'>
             <input
                 type='text'
+                id='question'
                 name='question'
                 placeholder='...do I stand a chance?'
                 value={newQuestion}
                 onChange={handleChange}
+
             />
-            <button onClick={()=>{props.getAnswer(newQuestion); setNewQuestion('')}}>ask</button>
+            <button id='tbutton' onClick={()=>{props.getAnswer(newQuestion); setNewQuestion('')}}>ask</button>
         </div>
     )
 };

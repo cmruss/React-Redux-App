@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner';
 const Answer = props => {
     return(
         <div className='answer'>
-            {props.question && <p>{props.question.toLowerCase()}</p>}
+            {props.question && <p>"{props.question.toLowerCase()}"</p>}
             {props.isFetching && (
                 <Loader type="ThreeDots" color="grey" height={20} width={20} />
                 )}
