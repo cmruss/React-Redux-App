@@ -1,13 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Loader from 'react-loader-spinner';
 
 
 const Answer = props => {
     return(
         <div className='answer'>
-            <p>Q: {props.question}</p>
-            <p>A: {props.response.answer}</p>
-            <img src={props.response.image}/>
+            {props.question && <p>{props.question.toLowerCase()}</p>}
+            {props.isFetching && (
+                <Loader type="ThreeDots" color="grey" height={20} width={20} />
+                )}
+            {props.response.image && <img src={props.response.image} alt={props.response.answer}/>}
+            
         </div>
     );
 };
